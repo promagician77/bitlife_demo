@@ -1,0 +1,104 @@
+/* ── Screen-specific layout ──────────────────────────────────────────────── */
+
+/* Character creation ------------------------------------------------------ */
+.create { padding: var(--s-6) var(--s-4) var(--s-8); display: grid; gap: var(--s-5); }
+.create__logo {
+  font-size: 40px; font-weight: 900; text-align: center; letter-spacing: -.03em;
+  background: linear-gradient(120deg, #fff, var(--accent-hi) 55%, #c084fc);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.create__sub { text-align: center; color: var(--txt-dim); font-size: var(--fs-sm); margin-top: -10px; }
+.field { display: grid; gap: var(--s-2); }
+.field__label { font-size: var(--fs-sm); font-weight: 700; color: var(--txt-soft); }
+.input {
+  width: 100%; min-height: 48px; padding: 0 var(--s-4);
+  border-radius: var(--r-md); background: var(--bg-elev-1);
+  border: 1px solid var(--line); color: var(--txt); font-size: var(--fs-md);
+}
+.input:focus { border-color: var(--accent); outline: none; }
+.segment { display: grid; grid-auto-flow: column; gap: 6px; padding: 4px; background: var(--bg-elev-1); border: 1px solid var(--line); border-radius: var(--r-md); }
+.segment button {
+  min-height: 40px; border-radius: var(--r-sm); font-size: var(--fs-sm); font-weight: 700;
+  color: var(--txt-soft); transition: background var(--dur-fast) var(--ease);
+}
+.segment button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+.roll-note { font-size: var(--fs-sm); color: var(--txt-dim); text-align: center; line-height: 1.6; }
+
+/* Home -------------------------------------------------------------------- */
+.home__stats { margin-top: var(--s-4); padding: var(--s-4); }
+.home__menu { display: grid; gap: var(--s-2); margin-top: var(--s-3); }
+
+/* Life feed --------------------------------------------------------------- */
+.feed { display: grid; gap: var(--s-2); }
+.feed__year {
+  position: sticky; top: 56px; z-index: 5;
+  margin: var(--s-4) 0 var(--s-2);
+  display: inline-flex; align-items: center; gap: var(--s-2);
+  padding: 5px 12px; border-radius: var(--r-pill);
+  background: var(--bg-elev-2); border: 1px solid var(--line);
+  font-size: var(--fs-sm); font-weight: 800; color: var(--txt-soft);
+}
+.entry {
+  display: flex; gap: var(--s-3); padding: var(--s-3);
+  background: var(--bg-elev-1); border: 1px solid var(--line);
+  border-left: 3px solid var(--tone, var(--line-strong));
+  border-radius: var(--r-md);
+  animation: screen-in var(--dur) var(--ease);
+}
+.entry__icon { font-size: 17px; line-height: 1.5; }
+.entry__text { font-size: var(--fs-md); line-height: 1.55; color: var(--txt); }
+.entry__delta { margin-top: 6px; display: flex; flex-wrap: wrap; gap: 6px; }
+.delta {
+  font-size: 10.5px; font-weight: 800; padding: 3px 7px; border-radius: var(--r-pill);
+  background: rgba(255,255,255,.06); border: 1px solid var(--line);
+}
+.delta--up { color: var(--c-money); border-color: rgba(74,222,128,.35); }
+.delta--down { color: var(--c-danger); border-color: rgba(248,113,113,.35); }
+
+/* Career ------------------------------------------------------------------ */
+.joblevel { padding: var(--s-4); display: grid; gap: var(--s-3); }
+.joblevel__top { display: flex; align-items: center; gap: var(--s-3); }
+.joblevel__badge {
+  width: 44px; height: 44px; border-radius: var(--r-md); display: grid; place-items: center;
+  font-size: 21px; background: linear-gradient(140deg, #2b3a5f, #18233d); border: 1px solid var(--line-strong);
+}
+.joblevel__next { text-align: right; font-size: var(--fs-sm); color: var(--txt-soft); }
+.xpbar { height: 7px; border-radius: var(--r-pill); background: rgba(255,255,255,.08); overflow: hidden; }
+.xpbar > span { display: block; height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent-hi)); transition: width var(--dur-slow) var(--ease); }
+
+/* Grid of tiles (skills, shop) -------------------------------------------- */
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-2); align-items: stretch; }
+.tile {
+  display: block; width: 100%;
+  padding: var(--s-3); border-radius: var(--r-md); text-align: left;
+  background: var(--bg-elev-1); border: 1px solid var(--line);
+  transition: transform var(--dur-fast) var(--ease), background var(--dur-fast) var(--ease);
+}
+.tile:active { transform: scale(.98); background: var(--bg-elev-2); }
+.tile[disabled] { opacity: .45; }
+.tile[disabled]:active { transform: none; }
+.tile__top { display: flex; align-items: center; gap: var(--s-2); }
+.tile__name { font-size: var(--fs-sm); font-weight: 700; }
+.tile__val { margin-left: auto; font-size: var(--fs-sm); font-weight: 800; color: var(--tone, var(--txt)); }
+.tile .stat__track { margin-top: 8px; }
+.tile .row__sub { margin-top: 6px; font-size: var(--fs-xs); }
+
+/* Relationship row -------------------------------------------------------- */
+.rel__meter { display: block; margin-top: 6px; height: 5px; border-radius: var(--r-pill); background: rgba(255,255,255,.08); overflow: hidden; }
+.rel__meter > span { display: block; height: 100%; border-radius: var(--r-pill); background: var(--tone, var(--c-popularity)); transition: width var(--dur) var(--ease); }
+
+/* Save slots -------------------------------------------------------------- */
+.slot { display: grid; gap: var(--s-3); padding: var(--s-4); }
+.slot__head { display: flex; align-items: center; gap: var(--s-3); }
+.slot__idx {
+  width: 30px; height: 30px; border-radius: var(--r-sm); display: grid; place-items: center;
+  background: var(--bg-glass); border: 1px solid var(--line); font-size: var(--fs-sm); font-weight: 800;
+}
+.slot__actions { display: grid; grid-auto-flow: column; gap: var(--s-2); }
+
+/* Game over --------------------------------------------------------------- */
+.gameover { padding: var(--s-8) var(--s-4); text-align: center; display: grid; gap: var(--s-4); }
+.gameover__icon { font-size: 56px; }
+.gameover__title { font-size: 28px; font-weight: 800; letter-spacing: -.02em; }
+.gameover__sub { color: var(--txt-soft); font-size: var(--fs-md); line-height: 1.6; }
+.gameover__stats { text-align: left; }

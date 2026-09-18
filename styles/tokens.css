@@ -1,0 +1,76 @@
+/* ── Design tokens ──────────────────────────────────────────────────────────
+   Single source of truth for colour, type, spacing and motion.
+   Change a value here and it propagates through every screen.        */
+:root {
+  /* Surfaces */
+  --bg-root:        #05070f;
+  --bg-app:         #080d1a;
+  --bg-elev-1:      #0e1526;
+  --bg-elev-2:      #131c31;
+  --bg-elev-3:      #1a2440;
+  --bg-glass:       rgba(255,255,255,.045);
+  --bg-glass-hi:    rgba(255,255,255,.085);
+  --bg-scrim:       rgba(3,5,12,.78);
+
+  /* Lines */
+  --line:           rgba(255,255,255,.08);
+  --line-strong:    rgba(255,255,255,.16);
+
+  /* Text */
+  --txt:            #eef3ff;
+  --txt-soft:       #9fb0cf;
+  --txt-dim:        #63749a;
+
+  /* Brand + semantic */
+  --accent:         #3b82f6;
+  --accent-hi:      #60a5fa;
+  --accent-ink:     #ffffff;
+  --gold:           #f5b642;
+
+  --c-health:       #34d399;
+  --c-happiness:    #fbbf24;
+  --c-fitness:      #38bdf8;
+  --c-mentality:    #a78bfa;
+  --c-money:        #4ade80;
+  --c-popularity:   #f472b6;
+  --c-danger:       #f87171;
+  --c-warn:         #fb923c;
+
+  /* Radii */
+  --r-sm: 10px;
+  --r-md: 14px;
+  --r-lg: 18px;
+  --r-xl: 24px;
+  --r-pill: 999px;
+
+  /* Spacing scale */
+  --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px;
+  --s-5: 20px; --s-6: 24px; --s-7: 32px; --s-8: 40px;
+
+  /* Type */
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+  --fs-xs: 11px; --fs-sm: 12.5px; --fs-md: 14px;
+  --fs-lg: 16px; --fs-xl: 19px;  --fs-2xl: 24px;
+
+  /* Elevation */
+  --sh-1: 0 1px 2px rgba(0,0,0,.4);
+  --sh-2: 0 8px 24px -8px rgba(0,0,0,.7);
+  --sh-3: 0 20px 50px -12px rgba(0,0,0,.85);
+  --glow-accent: 0 6px 22px -6px rgba(59,130,246,.65);
+
+  /* Motion */
+  --ease: cubic-bezier(.22,.61,.36,1);
+  --dur-fast: 130ms;
+  --dur:      220ms;
+  --dur-slow: 420ms;
+
+  /* Layout */
+  --phone-w: 400px;
+  --phone-h: 860px;
+  --tabbar-h: 62px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --dur-fast: 0ms; --dur: 0ms; --dur-slow: 0ms; }
+}

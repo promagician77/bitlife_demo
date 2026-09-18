@@ -1,0 +1,11 @@
+{
+  "name": "lifequest-demo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "LifeQuest \u2014 Phase 1 prototype of a life-simulation game (mobile-first web demo).",
+  "scripts": {
+    "start": "node init && python3 -m http.server 4173",
+    "smoke": "node tools/smoke.js"
+  }
+}

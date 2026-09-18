@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
+<meta name="theme-color" content="#05070f" />
+<meta name="description" content="LifeQuest — a life simulation game. Phase 1 prototype." />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<title>LifeQuest</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>" />
+<link rel="stylesheet" href="styles/tokens.css" />
+<link rel="stylesheet" href="styles/base.css" />
+<link rel="stylesheet" href="styles/components.css" />
+<link rel="stylesheet" href="styles/screens.css" />
+</head>
+<body>
+  <!-- Desktop-only backdrop: the game itself is always rendered at phone width -->
+  <div class="stage">
+    <aside class="stage__aside" aria-hidden="true">
+      <div class="stage__brand">LifeQuest</div>
+      <p class="stage__tag">Phase&nbsp;1 Prototype</p>
+      <ul class="stage__list">
+        <li>Character creation &amp; family</li>
+        <li>Year-by-year age progression</li>
+        <li>Childhood → school → university</li>
+        <li>Careers, economy &amp; skills</li>
+        <li>Random &amp; interactive events</li>
+        <li>Crime, police &amp; prison</li>
+        <li>Save / load (3 slots)</li>
+      </ul>
+      <p class="stage__hint">The UI is built mobile-first. Resize the window or open on a phone to see the native layout.</p>
+    </aside>
+
+    <div class="phone">
+      <div class="phone__notch" aria-hidden="true"></div>
+      <div class="phone__statusbar" aria-hidden="true">
+        <span id="statusClock">9:41</span>
+        <span class="phone__statusicons">
+          <svg viewBox="0 0 18 12" width="17"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="4.5" y="5.5" width="3" height="6.5" rx="1"/><rect x="9" y="3" width="3" height="9" rx="1"/><rect x="13.5" y="0" width="3" height="12" rx="1"/></svg>
+          <svg viewBox="0 0 16 12" width="16"><path d="M8 10.5a1.4 1.4 0 1 0 0-2.8 1.4 1.4 0 0 0 0 2.8Z"/><path d="M4.4 7.2a5.2 5.2 0 0 1 7.2 0l1.1-1.2a6.8 6.8 0 0 0-9.4 0l1.1 1.2Z"/><path d="M1.6 4.3a9.2 9.2 0 0 1 12.8 0l1.1-1.2a10.8 10.8 0 0 0-15 0l1.1 1.2Z"/></svg>
+          <svg viewBox="0 0 26 12" width="24"><rect x="0.5" y="0.5" width="21" height="11" rx="3.2" fill="none" stroke="currentColor" opacity=".45"/><rect x="2.2" y="2.2" width="17.6" height="7.6" rx="1.8"/><path d="M23.2 4.2v3.6a2 2 0 0 0 0-3.6Z" opacity=".45"/></svg>
+        </span>
+      </div>
+
+      <main id="app" class="app" aria-live="polite"></main>
+      <nav id="tabbar" class="tabbar" aria-label="Main navigation"></nav>
+      <div id="modalRoot" class="modal-root" aria-live="assertive"></div>
+      <div id="toastRoot" class="toast-root" aria-live="polite"></div>
+      <div class="phone__home" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <noscript><p style="color:#fff;padding:24px;font-family:sans-serif">LifeQuest needs JavaScript enabled.</p></noscript>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
